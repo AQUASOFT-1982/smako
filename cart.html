@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلة المشتريات وتأكيد الطلب | سمكو SMAKO</title>
+  <meta name="description" content="عربة تسوق سمكو - راجع طلبك من الأسماك والبحريات وأكده مباشرة عبر الواتساب لتصلك طازجة أينما كنت.">
+  <!-- Google Font Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <span><i class="fa-solid fa-graduation-cap"></i> إشراف مهندسي علوم الثروة السمكية</span>
+        <span><i class="fa-solid fa-truck-fast"></i> توصيل سريع لباب البيت</span>
+        <span><i class="fa-solid fa-phone"></i> 01025237420</span>
+      </div>
+      <div class="top-social">
+        <a href="https://wa.me/201025237420" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="admin.html" title="لوحة الإدارة"><i class="fa-solid fa-user-shield"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-fish-fins"></i>
+        </div>
+        <div class="brand-text">
+          <h1>سَمْكُو</h1>
+          <span>SMAKO SEAFOOD</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+        <a href="shop.html"><i class="fa-solid fa-shop"></i> المتجر والمنتجات</a>
+        <a href="index.html#about"><i class="fa-solid fa-circle-info"></i> عن سمكو</a>
+        <a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
+        <a href="index.html#contact"><i class="fa-solid fa-headset"></i> تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" title="عربة التسوق">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <button type="button" class="menu-toggle" aria-label="القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Content -->
+  <main class="cart-page">
+    <div class="container">
+      
+      <div class="section-header" style="margin-bottom: 35px;">
+        <span class="section-subtitle"><i class="fa-solid fa-cart-arrow-down"></i> مراجعة المشتريات</span>
+        <h1 class="section-title">سلة التسوق وإتمام الطلب</h1>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-cart-state" style="display: none; text-align: center; padding: 70px 20px; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+        <div style="width: 90px; height: 90px; background: var(--primary-light); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 20px;">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h2 style="font-size: 1.6rem; color: var(--dark); margin-bottom: 10px;">سلة التسوق فارغة حالياً</h2>
+        <p style="color: var(--gray); margin-bottom: 25px; max-width: 400px; margin-left: auto; margin-right: auto;">
+          لم تقم بإضافة أي أصناف من الأسماك أو البحريات حتى الآن. تصفح متجرنا واختر ما تشتهيه!
+        </p>
+        <a href="shop.html" class="btn btn-primary">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>الذهاب إلى المتجر</span>
+        </a>
+      </div>
+
+      <!-- Cart Grid Wrapper -->
+      <div class="cart-layout" id="cart-layout-wrapper">
+        
+        <!-- Cart Items Table -->
+        <div class="cart-items-card">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-list-check"></i> الأصناف المختارة
+          </h2>
+          <div class="cart-table-wrapper">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>المنتج</th>
+                  <th>الكمية المطلوبة</th>
+                  <th>الإجمالي</th>
+                  <th style="text-align: center;">حذف</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items-container">
+                <!-- Cart items dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <a href="shop.html" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span>متابعة التسوق وإضافة أصناف أخرى</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Order Summary & Checkout Form -->
+        <div class="cart-summary-card">
+          <h2 class="summary-title">
+            <i class="fa-solid fa-receipt"></i> ملخص الطلب وبيانات التوصيل
+          </h2>
+
+          <div class="summary-row">
+            <span>عدد الأصناف:</span>
+            <span id="cart-items-count-text" style="font-weight: 700;">0 صنف</span>
+          </div>
+          <div class="summary-row">
+            <span>المجموع الفرعي:</span>
+            <span id="cart-subtotal" style="font-weight: 700;">0 ج.م</span>
+          </div>
+          <div class="summary-row total">
+            <span>إجمالي الحساب:</span>
+            <span id="cart-final-total">0 ج.م</span>
+          </div>
+
+          <form id="checkout-form" class="checkout-form">
+            <div class="form-group">
+              <label for="customer-name"><i class="fa-solid fa-user"></i> اسم العميل الكريم *</label>
+              <input type="text" id="customer-name" class="form-control" placeholder="أدخل اسمك بالكامل" required>
+            </div>
+
+            <div class="form-group">
+              <label for="customer-phone"><i class="fa-solid fa-phone"></i> رقم الهاتف المحمول *</label>
+              <input type="tel" id="customer-phone" class="form-control" placeholder="01xxxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+              <label for="customer-branch"><i class="fa-solid fa-location-dot"></i> اختر أقرب فرع إليك</label>
+              <select id="customer-branch" class="form-control">
+                <option value="فرع فيصل (الجيزة)">فرع فيصل (الجيزة)</option>
+                <option value="فرع كفر الشيخ">فرع كفر الشيخ</option>
+                <option value="فرع طنطا (الغربية)">فرع طنطا (الغربية)</option>
+                <option value="فرع المحلة الكبرى (الغربية)">فرع المحلة الكبرى (الغربية)</option>
+                <option value="فرع المنصورة (الدقهلية)">فرع المنصورة (الدقهلية)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="customer-address"><i class="fa-solid fa-map-location-dot"></i> عنوان التوصيل بالتفصيل *</label>
+              <textarea id="customer-address" class="form-control" rows="2" placeholder="المنطقة، اسم الشارع، رقم العمارة والدور والشقة" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="customer-notes"><i class="fa-solid fa-pen-fancy"></i> ملاحظات خاصة (طريقة التنظيف / التجهيز)</label>
+              <textarea id="customer-notes" class="form-control" rows="2" placeholder="مثال: تنظيف سنجاري، قلي، شوي بالردة، تقطيع فيليه..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 15px; font-size: 1.1rem; padding: 14px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+              <span>إرسال وتأكيد الطلب عبر واتساب</span>
+            </button>
+            <p style="text-align: center; font-size: 0.8rem; color: var(--gray); margin-top: 10px;">
+              <i class="fa-solid fa-shield-halved"></i> سيتم فتح محادثة الواتساب مباشرة مع فريق خدمة عملاء سمكو بكافة تفاصيل طلبك
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo">
+            <div class="logo-icon">
+              <i class="fa-solid fa-fish-fins"></i>
+            </div>
+            <div class="brand-text">
+              <h1>سَمْكُو</h1>
+              <span>SMAKO SEAFOOD</span>
+            </div>
+          </div>
+          <p>
+            سلسلة منافذ بيع أسماك وجمبري وبحريات فاخرة تحت إشراف مهندسين من خريجي كلية علوم الثروة السمكية.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-left"></i> الرئيسية</a></li>
+            <li><a href="shop.html"><i class="fa-solid fa-angle-left"></i> المتجر</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-angle-left"></i> سلة المشتريات</a></li>
+            <li><a href="admin.html"><i class="fa-solid fa-angle-left"></i> لوحة الإدارة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>فروع سمكو</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فرع فيصل</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فرع كفر الشيخ</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فرع طنطا</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فرع المحلة الكبرى</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فرع المنصورة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>دعم العملاء</h4>
+          <ul>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>واتساب الطلبات:</strong><br>
+                <a href="https://wa.me/201025237420" target="_blank" style="color: var(--white); direction: ltr; display: inline-block;">01025237420</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 لسلسلة محلات ومنافذ سمكو (SMAKO).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

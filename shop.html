@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المتجر الإلكتروني | سمكو SMAKO - تسوق الأسماك والبحريات بالكميات المطلوبة</title>
+  <meta name="description" content="تسوق أفضل أنواع الأسماك والجمبري والكابوريا والفيليه الطازج بالكميات التي تريدها مباشرة عبر متجر سمكو مع خدمة التوصيل السريع.">
+  <!-- Google Font Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <span><i class="fa-solid fa-graduation-cap"></i> إشراف مهندسي علوم الثروة السمكية</span>
+        <span><i class="fa-solid fa-truck-fast"></i> دليفري سريع لكافة الفروع</span>
+        <span><i class="fa-solid fa-phone"></i> 01025237420</span>
+      </div>
+      <div class="top-social">
+        <a href="https://wa.me/201025237420" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="admin.html" title="لوحة الإدارة"><i class="fa-solid fa-user-shield"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-fish-fins"></i>
+        </div>
+        <div class="brand-text">
+          <h1>سَمْكُو</h1>
+          <span>SMAKO SEAFOOD</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+        <a href="shop.html" class="active"><i class="fa-solid fa-shop"></i> المتجر والمنتجات</a>
+        <a href="index.html#about"><i class="fa-solid fa-circle-info"></i> عن سمكو</a>
+        <a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فروعنا</a>
+        <a href="index.html#contact"><i class="fa-solid fa-headset"></i> تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" title="عربة التسوق">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count">0</span>
+        </a>
+        <a href="cart.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>إتمام الشراء</span>
+        </a>
+        <button type="button" class="menu-toggle" aria-label="القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header Banner -->
+  <section style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); padding: 50px 0 40px; text-align: center;">
+    <div class="container">
+      <div class="badge badge-gold" style="margin-bottom: 12px;">
+        <i class="fa-solid fa-cart-flatbed"></i> متجر الأسماك والبحريات الطازجة
+      </div>
+      <h1 style="font-size: 2.4rem; font-weight: 900; margin-bottom: 10px;">اختر طلبك بالكمية التي تريدها</h1>
+      <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto;">
+        جميع المنتجات طازجة ويتم تجهيزها وتغليفها تحت أعلى معايير الجودة والسلامة الصحية.
+      </p>
+    </div>
+  </section>
+
+  <!-- Shop Content -->
+  <section class="products-section" style="padding: 50px 0 80px;">
+    <div class="container">
+      
+      <!-- Search & Filters Container -->
+      <div style="background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-bottom: 40px;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+          
+          <!-- Search input -->
+          <div style="position: relative; flex: 1; min-width: 260px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--gray);"></i>
+            <input type="text" id="shop-search-input" class="form-control" placeholder="ابحث باسم السمك، الجمبري أو المنتج..." style="padding-right: 44px;">
+          </div>
+
+          <!-- Category Buttons -->
+          <div class="categories-filter" style="margin-bottom: 0;">
+            <button type="button" class="filter-btn active" data-category="all">
+              <i class="fa-solid fa-layer-group"></i> الكل
+            </button>
+            <button type="button" class="filter-btn" data-category="fish">
+              <i class="fa-solid fa-fish"></i> أسماك طازجة
+            </button>
+            <button type="button" class="filter-btn" data-category="shrimp">
+              <i class="fa-solid fa-shrimp"></i> جمبري وبحريات
+            </button>
+            <button type="button" class="filter-btn" data-category="fillet">
+              <i class="fa-solid fa-drumstick-bite"></i> فيليه ومخلى
+            </button>
+            <button type="button" class="filter-btn" data-category="seafood">
+              <i class="fa-solid fa-water"></i> كابوريا وسبيط
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="shop-products-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo">
+            <div class="logo-icon">
+              <i class="fa-solid fa-fish-fins"></i>
+            </div>
+            <div class="brand-text">
+              <h1>سَمْكُو</h1>
+              <span>SMAKO SEAFOOD</span>
+            </div>
+          </div>
+          <p>
+            سلسلة منافذ بيع أسماك وجمبري وبحريات فاخرة تحت إشراف مهندسين من خريجي كلية علوم الثروة السمكية.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-left"></i> الرئيسية</a></li>
+            <li><a href="shop.html"><i class="fa-solid fa-angle-left"></i> المتجر</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-angle-left"></i> عربة المشتريات</a></li>
+            <li><a href="admin.html"><i class="fa-solid fa-angle-left"></i> لوحة الإدارة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>فروعنا</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> فيصل</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> كفر الشيخ</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> طنطا</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> المحلة الكبرى</a></li>
+            <li><a href="index.html#branches"><i class="fa-solid fa-location-dot"></i> المنصورة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>الطلبات والدليفري</h4>
+          <ul>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>واتساب مباشر:</strong><br>
+                <a href="https://wa.me/201025237420" target="_blank" style="color: var(--white); direction: ltr; display: inline-block;">01025237420</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 لسلسلة محلات ومنافذ سمكو (SMAKO).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/201025237420" target="_blank" class="whatsapp-float" title="تواصل مباشر عبر الواتساب">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
