@@ -1,6 +1,6 @@
 // Smako E-Commerce - Cart & Checkout Page Logic
 
-const SMAKO_PHONE = "201025237420"; // Egypt country code format for WhatsApp
+const SMAKO_PHONE = "201012567737"; // Egypt country code format for WhatsApp
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCartPage();
@@ -149,7 +149,7 @@ function handleCheckoutSubmit(e) {
 
   message += `--------------------------------\n`;
   message += `💰 *إجمالي الطلب:* ${subtotal} ج.م\n\n`;
-  message += `تحت إشراف مهندسين من خريجي كلية علوم الثروة السمكية 🎓`;
+  message += `تحت اشراف سمكو🎓`;
 
   // Encode message for WhatsApp URL
   const encodedMsg = encodeURIComponent(message);
